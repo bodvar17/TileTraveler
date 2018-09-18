@@ -1,3 +1,10 @@
+#Questions:
+#1.The second implementation was a lot easier because you had already programmed a solution to your problem so you had all the "meat" but just had to "put it on the bones" in the second one 
+#2.The second implementation is a lot more readable; a lot more stylishly set up and every step/function is explained for the avarege reader.
+#3.It made the code a lot more readable and easier to debug.
+
+
+#The first project without functions:
 #x=1
 #y=1
 #while (str(x) + str(y)) != "31":
@@ -130,26 +137,34 @@
 #                print("Victory!")
 #                break
 
+
+#The second project with functions:
 def Move_North(x,y):
+    """This function moves you from your current position to north"""
     y+=1
     return x,y
 def Move_South(x,y):
+    """This function moves you from your current position to south"""
     y=y-1
     return x,y
 def Move_West(x,y):
+    """This function moves you from your current position to west"""
     x=x-1
     return x,y
 def Move_East(x,y):
+    """This function moves you from your current position to east"""
     x+=1
     return x,y
 
 def Has_Not_Won(x,y):
+    """This function returns "True" if you have not won the game and "False if you have won"""
     if x == 3 and y == 1:
         return False
     else:
         return True
 
 def Where_U_Can_Move(x,y):
+    """This function checks your position and prints where you can move to next"""
     if x == 1 and y == 3:
         print("You can travel: ", end='')
         print("(E)ast","or ", end='')
@@ -183,6 +198,7 @@ def Where_U_Can_Move(x,y):
         print("(S)outh.")
 
 def To_Move(direction,x,y):
+    """This function actually lets you move depending on your position and choise of direction"""
     if x == 1 and y == 3:
         while direction != "e" and direction != "s":
             print("Not a valid direction!")
@@ -280,7 +296,3 @@ while Has_Not_Won(x,y):
     x,y = To_Move(direction,x,y)
 else:
     print("Victory!")
-
-#git add .
-#git commit -m "Lokaskil"
-#git push -u origin master
